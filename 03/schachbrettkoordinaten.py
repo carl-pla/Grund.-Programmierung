@@ -1,3 +1,4 @@
+
 # Aufgabe 4: Schachbrettkoordinaten
 
 schachbrett = ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", 
@@ -9,6 +10,12 @@ schachbrett = ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8",
                 "g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8",
                 "h1", "h2", "h3", "h4", "h5", "h6", "h7", "h8"
                ]
-for i in range(0, 64, 8):
+"""
+for i in range(0, 64, 8): # Schrittweite 8 damit jede Zeile neu begonnen wird (0-7, 8-15, 16-23, ...)
     print(schachbrett[i:i+8])
+"""
+
+# Optimerung mit enumerate
+for i, reihe in enumerate(range(0, 64, 8)):
+    print(*schachbrett[reihe:reihe+8])
     

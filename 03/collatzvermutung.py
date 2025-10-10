@@ -2,7 +2,7 @@
 import random as rd
 zahl = 0
 
-for i in range(30):
+while True: 
     zahl = rd.randint(1, 10)
     check = False
     

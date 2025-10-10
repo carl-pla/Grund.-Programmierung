@@ -1,0 +1,330 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "c76271db-4a32-43bc-a88e-e89d78d2340c",
+   "metadata": {},
+   "source": [
+    "## Objekte vom Typ str (Strings)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cef95a39-2e49-4d22-b85c-3fe9f95b1e36",
+   "metadata": {},
+   "source": [
+    "### Operatoren"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "446de2a6-ed7b-4027-baa5-27d4a23e941d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# + Operator (\"Addition\") \n",
+    "\"ac\"+\"dc\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0ac3412c-ee03-4a80-a3e8-5b7cb58d7df1",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# \"Addition\" von Strings nicht Integer!\n",
+    "\"1\"+\"2\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2c888aea-80a7-4c74-aba5-2642faf5de78",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# int * str\n",
+    "3*\"ab\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a4e49ff7-813c-4335-bc8c-d3e37f3dcd1a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# float * str ist nicht definiert\n",
+    "3.0*\"ab\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4a797bcf-4c6b-47e1-8c14-afbde449bf23",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# \"Multiplikation\" von Strings ist nicht definiert \n",
+    "\"a\"*\"b\""
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ac6a7518-6d2f-4d2a-a3f4-7ef716cbfc4f",
+   "metadata": {},
+   "source": [
+    "### Strings sind sequentielle Datentypen (sequence types)\n",
+    "\n",
+    "#### Für alle sequentielle Datentypen gibt es folgende Operationen "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "53afd40a-bbf0-4bda-bfc6-d72c0ab67407",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Länge\n",
+    "len(\"abc\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "3024c993-bff5-4187-b65d-fb3e0b83d0ef",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'d'"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Index-Zugriff\n",
+    "# Achtung: Indizierung beginnt bei 0\n",
+    "\"abcd\"[3]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8e450ad9",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "71e88277-4924-48dd-bcdc-000b258bcce8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Slicing\n",
+    "# string[start_index, ende_index+1,step]\n",
+    "# Default Werte (Wenn nicht angegeben): \n",
+    "# start_index = 0\n",
+    "# ende_index+1 = len(string)\n",
+    "# step = 1\n",
+    "\"abcdefghij\"[2:4]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1f1591db-e83d-42e8-9a6a-8a667ba6ef26",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "beliebiger_string = \"abcdefghij\"\n",
+    "beliebiger_string[0:len(beliebiger_string)]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8aa58195-7b4b-4b90-86d7-e0d44012b777",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# oder kürzer (Default Werte beachten!)\n",
+    "beliebiger_string[:]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1cd1d253-69a7-462c-b1e2-f9bb856fcc3e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Jedes 2. Element ab Index 3 bis Index 10\n",
+    "\"abcdefghijklm\"[3:10:2]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "1eb71aa6-79d0-4214-8625-c66d99722f63",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'jihg'"
+      ]
+     },
+     "execution_count": 1,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Negative Werte: -1 = Index des letzten Zeichens\n",
+    "# step = -1: Richtungsumkehr\n",
+    "\"abcdefghij\"[-1:5:-1]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "34df5334-0c74-4724-a3a9-4cede098cd87",
+   "metadata": {},
+   "source": [
+    "### Formattierung von Strings"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "6436199f-30a8-4d32-9c23-cf3bc713782f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "5.0 ist 25.0 % von 20 .\n"
+     ]
+    }
+   ],
+   "source": [
+    "zahl = 20\n",
+    "anteil = 0.25\n",
+    "\n",
+    "print(anteil*zahl, \"ist\", anteil*100, \"%\", \"von\", zahl, \".\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "02b8b1c5-e4d0-41a8-896c-8831aa5ce153",
+   "metadata": {},
+   "source": [
+    "#### Schöner formatiert mittels Type Conversion"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "485a7205-dcca-4bcc-b894-2a4186302abf",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(anteil*zahl, \"ist\", str(anteil*100)+\"%\", \"von\", str(zahl)+\".\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0e9d8197-76dd-439d-8cd1-ae6b7517818e",
+   "metadata": {},
+   "source": [
+    "#### oder mit f-Strings (ab Python 3.6)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "dbef4ee8-1082-4c1d-bca0-ed0440a6878c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\"\"\"\n",
+    "In den Klammern {} stehen Variablen, \n",
+    "die bei der Ausgabe durch den jeweiligen Wert ersetzt werden.\n",
+    "\"\"\"\n",
+    "print(f\"{anteil*zahl} ist {anteil*100}% von {zahl}.\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a490e9c0-08be-4802-93ad-ce01bd6406de",
+   "metadata": {},
+   "source": [
+    "### Python unterstützt den Unicode-Standard\n",
+    "\n",
+    "Dieser Standard legt den zur Verfügung stehenden Zeichensatz fest und enthält ca. 150.000 Zeichen"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "db7981e1-87fb-4f29-a9d2-b559e0f57678",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Hallo Welt mit chinesischen Schriftzeichen\n",
+    "print('你好，世界')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "4b9b6c78-9bf2-4d08-ae9d-b1a6b1c4e6b3",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Die Quersumme von 432 ist 9.\n"
+     ]
+    }
+   ],
+   "source": [
+    "zahl = \"432\"\n",
+    "ergebnis = int(zahl[0]) + int(zahl[1]) + int(zahl[2])\n",
+    "print(f\"Die Quersumme von {zahl} ist {ergebnis}.\")\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "storefront",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.2"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
