@@ -1,13 +1,4 @@
-#Aufgabe 2 
-def Assignment():
-    a = input("Geben Sie ihren Namen ein: ")
-    b = input("Geben Sie ihren Vornamen ein: ")
-    
-    a,b = b, a 
-    print(a, b)
-    
-
-#Aufgabe 1 a) +b)
+#Aufgabe 1 a) +b): Operatoren
 def tf(): 
     # Eingabe von zwei Wahrheitswerten (t/f)
     eingabe1 = input("Geben Sie True oder False ein 1 (t/f): ").lower()
@@ -53,3 +44,12 @@ tf()
 print(True and False or False)
 print((True and False) or False)
 print(True and (False or False))
+
+#Aufgabe 2: Assignment
+def Assignment():
+    a = input("Geben Sie ihren Namen ein: ")
+    b = input("Geben Sie ihren Vornamen ein: ")
+    
+    a,b = b, a 
+    print(a, b)
+    

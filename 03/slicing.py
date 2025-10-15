@@ -1,7 +1,7 @@
 #Aufgabe 1:
 planet = "Tatooine" 
 
-print(planet[0:4]) #tatoo
+print(planet[0:5]) #tatoo
 print(planet[3:5]) #oo
 print(planet[5:9:], "\n") #ine
 
