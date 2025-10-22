@@ -9,14 +9,27 @@ print(einleitung)
 def umrechnen():
     
     
-    #Eingabe überprüft, ob float eingegebn wird, wenn nicht wird wiederholt
+    #Eingabe prüfen: float Eingabe, falsche Einheiten, selbe Einheit
     eingabe_wert = input("\nWelcher Wert soll umgewandelt werden?: ")
     try: 
         eingabe_wert = float(eingabe_wert) 
     except:
         print("Du darfst nur Integer oder Floats verwenden")
         return umrechnen()
+    
+    try: 
+        eingabe_einheit_start or eingabe_einheit_ziel == "F" "C" "K"
+    except:
+        print("Du kannst nur in Celsius(C), Kelvin(K), Fahrenheit(F) umrechnen!")
+        return umrechnen()
    
+    try: 
+        eingabe_einheit_start == eingabe_einheit_ziel
+    except: 
+        print("Du darfst nicht die selbe Einheit benutzen!")
+        return umrechnen()
+       
+        
     
     #3 Eingabewerte: Wert, Starteinheit, Zieleinheit
     eingabe_einheit_start = input("Welche Einheit benutzen Sie? (C/K/F): ")
@@ -24,6 +37,7 @@ def umrechnen():
     eingabe_einheit_ziel = input(f"In welche Einheit soll '{eingabe_einheit_start}' umgerechnet werden? (C/K/F): ")
     eingabe_einheit_ziel = eingabe_einheit_ziel.upper() #Großschreibfehler vermeiden
    
+    
     # Einzelnen Umrechnungen
     if eingabe_einheit_start == "C" and eingabe_einheit_ziel == "K": 
             ergebnis = 273.15 + eingabe_wert
@@ -45,27 +59,15 @@ def umrechnen():
             print(f"Dein Zielwert beträgt: {round(ergebnis, 2)}{eingabe_einheit_ziel}") 
             wiederholen()
             
-
     elif eingabe_einheit_start == "F" and eingabe_einheit_ziel == "C": 
             ergebnis = (5/9) * (eingabe_wert) - 32
             print(f"Dein Zielwert beträgt: {round(ergebnis, 2)}{eingabe_einheit_ziel}") 
             wiederholen()
            
-
     elif eingabe_einheit_start == "F" and eingabe_einheit_ziel == "K": 
             ergebnis = ((eingabe_wert) - 32) * (5/9) + 273,15 
             print(f"Dein Zielwert beträgt: {round(ergebnis, 2)}{eingabe_einheit_ziel}") 
             wiederholen()
-            
-        
-    #Fehlernetz: Selbe Einheit, falsche Einheit
-    elif eingabe_einheit_start == eingabe_einheit_ziel: 
-        print("Du darfst nicht die selbe Einheit benutzen!")
-        wiederholen()
-        
-    elif eingabe_einheit_start or eingabe_einheit_ziel != "F" "C" "K":
-        print("Du kannst nur in Celsius(C), Kelvin(K), Fahrenheit(F) umrechnen!")
-        wiederholen()
     
 
  
@@ -77,10 +79,9 @@ def wiederholen():
         if wiederholen == "y": 
             umrechnen()
              
-            
         elif wiederholen == "n":
             print("Vielen Dank für die Nutzung!")
-            
+        
         else: 
             print("Eingabe war ungültig, nochmal: ")
 
