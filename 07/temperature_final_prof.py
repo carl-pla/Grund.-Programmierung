@@ -39,7 +39,7 @@ def celsius_to_kelvin(degree):
     return degree + 273.15
 
 def kelvin_to_celsius(degree):
-    return degree - 273.14
+    return degree - 273.15 # vorheriger Fehler 
 
 def kelvin_to_fahrenheit(degree):
     return 1.8*(degree - 273.15) + 32 
