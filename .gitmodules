@@ -1,0 +1,3 @@
+[submodule "projekt_food_waste"]
+	path = projekt_food_waste
+	url = https://github.com/carl-pla/projekt_food_waste.git
