@@ -1,4 +1,5 @@
 class BankAccount: #Klassenmethode
+    #Klassenattribute
     zinsen = 0.03 
     number_of_accounts = 0
     bank_name = "Rothschild"
